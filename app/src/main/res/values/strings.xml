@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Weather1</string>
     <string name="title">Погода</string>
+    <string name="buttonName">To 2nd Activity</string>
+    <string name="rain">Дождь</string>
+    <string name="sity">в Челябинске</string>
+    <string name="sun">СОЛНЕЧНО</string>
+    <string name="temper">0....+2</string>
+    <string name="temper_grad"> °C</string>
+    <string name="pres">740</string>
+    <string name="pres_mm"> мм.рт.ст.</string>
+    <string name="cloud">10-15</string>
+    <string name="cloud_perc">% облачности</string>
 </resources>
