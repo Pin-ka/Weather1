@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".SecondActivity">
     <LinearLayout
         android:layout_width="wrap_content"
@@ -12,7 +13,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +34,7 @@
 
         <TextView
             android:id="@+id/cityName"
-            android:textSize="20sp"
+            android:textColor="#FF00BF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -46,6 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FF00BF"
                 android:text="@string/temper" />
             <TextView
                 android:layout_width="wrap_content"
@@ -60,6 +63,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FF00BF"
                 android:text="@string/pres"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -74,6 +78,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FF00BF"
                 android:text="@string/cloud"/>
             <TextView
                 android:layout_width="wrap_content"
