@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -18,16 +19,19 @@
                 android:id="@+id/temperBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/temperName"/>
+                android:textColor="@android:color/white"
+                android:text="@string/tempName"/>
             <CheckBox
                 android:id="@+id/pressBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
                 android:text="@string/pressName"/>
             <CheckBox
                 android:id="@+id/cloudBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
                 android:text="@string/cloudName"/>
         </LinearLayout>
         <LinearLayout
@@ -38,7 +42,8 @@
                 android:id="@+id/cityName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/inputSity"
+                android:hint="@string/inputCity"
+                android:textColor="#FF00BF"
                 android:inputType="textPersonName"/>
             <ImageView
                 android:id="@+id/btnGo"

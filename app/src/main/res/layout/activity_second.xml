@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".SecondActivity">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
+        android:textColor="#FF00BF"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -21,12 +22,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
             android:layout_gravity="center"
             android:text="@string/sun"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:src="@drawable/sun"/>
         <LinearLayout
             android:id="@+id/temperLayout"
@@ -36,6 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FF00BF"
                 android:text="@string/temper" />
             <TextView
                 android:layout_width="wrap_content"
@@ -50,6 +52,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FF00BF"
                 android:text="@string/pres"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -64,6 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FF00BF"
                 android:text="@string/cloud"/>
             <TextView
                 android:layout_width="wrap_content"
