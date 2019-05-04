@@ -34,7 +34,7 @@
 
         <TextView
             android:id="@+id/cityName"
-            android:textColor="#FF00BF"
+            android:textColor="@color/dynamicColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FF00BF"
+                android:textColor="@color/dynamicColor"
                 android:text="@string/temper" />
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FF00BF"
+                android:textColor="@color/dynamicColor"
                 android:text="@string/pres"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FF00BF"
+                android:textColor="@color/dynamicColor"
                 android:text="@string/cloud"/>
             <TextView
                 android:layout_width="wrap_content"
