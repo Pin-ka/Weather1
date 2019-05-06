@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">Погода</string>
-    <string name="sun">СОЛНЕЧНО</string>
-    <string name="temper" translatable="false">0....+2</string>
-    <string name="temper_grad" translatable="false"> °C</string>
-    <string name="pres" translatable="false">740</string>
-    <string name="pres_mm"> мм.рт.ст.</string>
-    <string name="cloud" translatable="false">10-15</string>
-    <string name="cloud_perc">% облачности</string>
-    <string name="inputCity">Введите город</string>
-    <string name="tempName">температура</string>
-    <string name="pressName">атмосферное давление</string>
-    <string name="cloudName">облачность</string>
-
+    <string name="empty">Пусто</string>
+    <string name="temper_grad" translatable="false">°C</string>
+    <string name="city_name_1">Москва</string>
+    <string name="city_name_2">Санкт-Петербург</string>
+    <string name="city_name_3">Екатеринбург</string>
+    <string name="city_name_4">Новосибирск</string>
+    <string name="city_name_5">Самара</string>
+    <string name="temper_1" translatable="false">12...14</string>
+    <string name="temper_2" translatable="false">8...11</string>
+    <string name="temper_3" translatable="false">9...12</string>
+    <string name="temper_4" translatable="false">5...8</string>
+    <string name="temper_5" translatable="false">10...14</string>
 </resources>

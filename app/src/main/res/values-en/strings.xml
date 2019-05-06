@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Weather</string>
-    <string name="sun">SUNNY</string>
-    <string name="pres_mm"> mm Hg</string>
-    <string name="cloud_perc">% cloudiness</string>
-    <string name="inputCity">Enter the city</string>
-    <string name="tempName">temperature</string>
-    <string name="pressName">atmospheric pressure</string>
-    <string name="cloudName">cloudiness</string>
+    <string name="empty">Empty</string>
+    <string name="city_name_1">Moscow</string>
+    <string name="city_name_2">Saint-Petersburg</string>
+    <string name="city_name_3">Yekaterinburg</string>
+    <string name="city_name_4">Novosibirsk</string>
+    <string name="city_name_5">Samara</string>
 </resources>
