@@ -1,57 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".MainActivity">
+    android:background="@drawable/background">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <CheckBox
-                android:id="@+id/temperBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="@string/tempName"/>
-            <CheckBox
-                android:id="@+id/pressBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="@string/pressName"/>
-            <CheckBox
-                android:id="@+id/cloudBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="@string/cloudName"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <EditText
-                android:id="@+id/cityName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/inputCity"
-                android:textColor="@color/dynamicColor"
-                android:inputType="textPersonName"/>
-            <ImageView
-                android:id="@+id/btnGo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/button_go"/>
-        </LinearLayout>
+    <fragment android:name="com.pinka.weather1.CitiesListFragment"
+        android:id="@+id/cities_list"
+        android:layout_weight="1"
+        android:layout_width="0px"
+        android:layout_height="match_parent" />
 
-    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/data_of_temp"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
-</FrameLayout>
+</LinearLayout>
