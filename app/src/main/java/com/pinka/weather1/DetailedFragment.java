@@ -1,5 +1,6 @@
 package com.pinka.weather1;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Objects;
 
 
 public class DetailedFragment extends Fragment {
@@ -28,12 +31,11 @@ public class DetailedFragment extends Fragment {
     }
 
     public int getIndex() {
-        int index = getArguments().getInt("index", 0);
-        return index;
+        return Objects.requireNonNull(getArguments()).getInt("index", 0);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_detailed,container,false);
     }
@@ -56,8 +58,8 @@ public class DetailedFragment extends Fragment {
         String currentTemper= tempers[getIndex()];
         temperText.setText(currentTemper);
 
-        TypedArray imgs = getResources().obtainTypedArray(R.array.weather_imgs);
-        image.setImageResource(imgs.getResourceId(getIndex(), -1));
+        @SuppressLint("Recycle") TypedArray images = getResources().obtainTypedArray(R.array.weather_images);
+        image.setImageResource(images.getResourceId(getIndex(), -1));
     }
 
     private void initViews(View view) {

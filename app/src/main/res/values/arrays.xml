@@ -14,7 +14,7 @@
         <item>@string/temper_4</item>
         <item>@string/temper_5</item>
     </array>
-    <integer-array name="weather_imgs">
+    <integer-array name="weather_images">
         <item>@drawable/sun100</item>
         <item>@drawable/sun70</item>
         <item>@drawable/sun50</item>
