@@ -12,4 +12,20 @@
     <string name="temper_3" translatable="false">9...12</string>
     <string name="temper_4" translatable="false">5...8</string>
     <string name="temper_5" translatable="false">10...14</string>
+    <string name="press_1" translatable="false">736</string>
+    <string name="press_2" translatable="false">742</string>
+    <string name="press_3" translatable="false">744</string>
+    <string name="press_4" translatable="false">738</string>
+    <string name="press_5" translatable="false">770</string>
+    <string name="cloud_1" translatable="false">0</string>
+    <string name="cloud_2" translatable="false">30</string>
+    <string name="cloud_3" translatable="false">50</string>
+    <string name="cloud_4" translatable="false">70</string>
+    <string name="cloud_5" translatable="false">100</string>
+    <string name="settings">Настройки</string>
+    <string name="imageName">иллюстрация</string>
+    <string name="pressName">атмосферное давление</string>
+    <string name="cloudName">облачность</string>
+    <string name="pres_mm"> мм.рт.ст.</string>
+    <string name="cloud">% облачности</string>
 </resources>

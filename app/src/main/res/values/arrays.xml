@@ -21,4 +21,18 @@
         <item>@drawable/sun_and_rain</item>
         <item>@drawable/rain</item>
     </integer-array>
+    <integer-array name="press">
+        <item>@string/press_1</item>
+        <item>@string/press_2</item>
+        <item>@string/press_3</item>
+        <item>@string/press_4</item>
+        <item>@string/press_5</item>
+    </integer-array>
+    <integer-array name="cloud">
+        <item>@string/cloud_1</item>
+        <item>@string/cloud_2</item>
+        <item>@string/cloud_3</item>
+        <item>@string/cloud_4</item>
+        <item>@string/cloud_5</item>
+    </integer-array>
 </resources>
