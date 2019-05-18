@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class CitiesListFragment extends Fragment {
     DetailedFragment detail;
 
     int currentPosition = 0;
+
+    private  Bundle savedInstanceState=null;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -41,6 +44,12 @@ public class CitiesListFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        this.savedInstanceState=savedInstanceState;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         if (savedInstanceState != null) {
             currentPosition = savedInstanceState.getInt("CurrentCity", 0);
         }
@@ -59,6 +68,15 @@ public class CitiesListFragment extends Fragment {
     private void initViews(View view) {
         listView = view.findViewById(R.id.cities_list_view);
         emptyTextView=view.findViewById(R.id.cities_list_empty_view);
+        ImageView settingsBtn = view.findViewById(R.id.btnSettings);
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Objects.requireNonNull(getActivity()), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initList() {

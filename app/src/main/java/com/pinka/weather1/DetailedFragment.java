@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Objects;
@@ -18,8 +19,13 @@ import java.util.Objects;
 
 public class DetailedFragment extends Fragment {
     TextView temperText;
+    TextView temperName;
+    TextView pressText;
+    TextView cloudText;
     TextView cityName;
     ImageView image;
+    private LinearLayout pressLayout;
+    private LinearLayout cloudLayout;
 
     public static DetailedFragment create(int index) {
         DetailedFragment f = new DetailedFragment();
@@ -54,17 +60,39 @@ public class DetailedFragment extends Fragment {
             cityName.setText(currentName);
         }
 
+        if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE) {
+            temperText.setTextSize(30);
+            temperName.setTextSize(30);
+        }
+
         String[] tempers=getResources().getStringArray(R.array.Tempers);
         String currentTemper= tempers[getIndex()];
         temperText.setText(currentTemper);
 
         @SuppressLint("Recycle") TypedArray images = getResources().obtainTypedArray(R.array.weather_images);
         image.setImageResource(images.getResourceId(getIndex(), -1));
+
+        String[] presses=getResources().getStringArray(R.array.press);
+        String currentPress= presses[getIndex()];
+        pressText.setText(currentPress);
+
+        String[] clouds=getResources().getStringArray(R.array.cloud);
+        String currentCloud= clouds[getIndex()];
+        cloudText.setText(currentCloud);
+
+        if(!SettingsFragment.checkBoxes[0]) image.setVisibility(View.GONE);
+        if(!SettingsFragment.checkBoxes[1]) pressLayout.setVisibility(View.GONE);
+        if(!SettingsFragment.checkBoxes[2]) cloudLayout.setVisibility(View.GONE);
     }
 
     private void initViews(View view) {
         temperText=view.findViewById(R.id.temperTextView);
         cityName=view.findViewById(R.id.cityName);
         image=view.findViewById(R.id.weatherImage);
+        pressText=view.findViewById(R.id.pressTextView);
+        cloudText=view.findViewById(R.id.cloudTextView);
+        pressLayout=view.findViewById(R.id.pressLayout);
+        cloudLayout=view.findViewById(R.id.cloudLayout);
+        temperName=view.findViewById(R.id.temperName);
     }
 }
