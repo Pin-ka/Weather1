@@ -22,7 +22,6 @@ import java.util.Objects;
 public class CitiesListFragment extends Fragment {
     private ListView listView;
     private TextView emptyTextView;
-    DetailedFragment detail;
 
     int currentPosition = 0;
 
@@ -96,7 +95,7 @@ public class CitiesListFragment extends Fragment {
     private void showCoatOfArms() {
         if (getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
             listView.setItemChecked(currentPosition, true);
-            detail = (DetailedFragment) Objects.requireNonNull(getFragmentManager()).
+            DetailedFragment detail = (DetailedFragment) Objects.requireNonNull(getFragmentManager()).
                     findFragmentById(R.id.data_of_temp);
             if (detail == null || detail.getIndex() != currentPosition) {
                 detail = DetailedFragment.create(currentPosition);

@@ -18,12 +18,8 @@ import java.util.Objects;
 
 
 public class DetailedFragment extends Fragment {
-    TextView temperText;
-    TextView temperName;
-    TextView pressText;
-    TextView cloudText;
-    TextView cityName;
-    ImageView image;
+    private TextView temperText, temperName, pressText, cloudText, cityName;
+    private ImageView image;
     private LinearLayout pressLayout;
     private LinearLayout cloudLayout;
 
