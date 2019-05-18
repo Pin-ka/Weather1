@@ -59,6 +59,10 @@ public class DetailedFragment extends Fragment {
         if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE) {
             temperText.setTextSize(30);
             temperName.setTextSize(30);
+            LinearLayout.LayoutParams params= (LinearLayout.LayoutParams) image.getLayoutParams();
+            params.height=200;
+            image.setLayoutParams(params);
+
         }
 
         String[] tempers=getResources().getStringArray(R.array.Tempers);
