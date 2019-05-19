@@ -15,9 +15,7 @@ import java.util.Objects;
 public class SettingsFragment extends Fragment {
 
     private ImageView btnOk;
-    private CheckBox imageBox;
-    private CheckBox pressBox;
-    private CheckBox cloudBox;
+    private CheckBox imageBox,pressBox,cloudBox;
     public static boolean []checkBoxes=new boolean[3];
 
     @Nullable

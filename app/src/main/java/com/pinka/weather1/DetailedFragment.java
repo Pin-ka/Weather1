@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,14 +16,23 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Objects;
+import java.util.Random;
 
 
 public class DetailedFragment extends Fragment {
     private TextView temperText, temperName, pressText, cloudText, cityName;
-    private ImageView image;
-    private LinearLayout pressLayout;
-    private LinearLayout cloudLayout;
+    private ImageView image,btnForRecycler;
+    private LinearLayout pressLayout,cloudLayout;
+    private RecyclerView recyclerView;
+    private ArrayList<ForecastData> data=new ArrayList<>();
+    private boolean isAddElement=true;
+    private GregorianCalendar gc=new GregorianCalendar();
+    private Random random=new Random();
+    private RVAdapter adapter;
 
     public static DetailedFragment create(int index) {
         DetailedFragment f = new DetailedFragment();
@@ -47,6 +58,30 @@ public class DetailedFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         initViews(view);
         setViews();
+        getData();
+        initListeners();
+        LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter=new RVAdapter(data);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void getData() {
+        for (int i=0;i<3;i++){
+            gc.add(Calendar.DATE,1);
+            int month=gc.get(Calendar.MONTH);
+            int day=gc.get(Calendar.DAY_OF_MONTH);
+            int temper=random.nextInt(20);
+            String dateTerminate;
+            if (month<10){
+                dateTerminate=".0";
+            }
+            else {
+                dateTerminate=".";
+            }
+            data.add(new ForecastData(day+dateTerminate+month,temper+"..."+(temper+random.nextInt(5))));
+        }
+
     }
 
     private void setViews() {
@@ -62,7 +97,6 @@ public class DetailedFragment extends Fragment {
             LinearLayout.LayoutParams params= (LinearLayout.LayoutParams) image.getLayoutParams();
             params.height=200;
             image.setLayoutParams(params);
-
         }
 
         String[] tempers=getResources().getStringArray(R.array.Tempers);
@@ -94,5 +128,43 @@ public class DetailedFragment extends Fragment {
         pressLayout=view.findViewById(R.id.pressLayout);
         cloudLayout=view.findViewById(R.id.cloudLayout);
         temperName=view.findViewById(R.id.temperName);
+        recyclerView=view.findViewById(R.id.recyclerView);
+        btnForRecycler=view.findViewById(R.id.btnForRecycler);
+    }
+
+    private void initListeners(){
+        btnForRecycler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isAddElement){
+                    gc.add(Calendar.DATE,1);
+                    int month=gc.get(Calendar.MONTH);
+                    int day=gc.get(Calendar.DAY_OF_MONTH);
+                    int temper=random.nextInt(20);
+                    String dateTerminate;
+                    if (month<10){
+                        dateTerminate=".0";
+                    }
+                    else {
+                        dateTerminate=".";
+                    }
+                    data.add(new ForecastData(day+dateTerminate+month,temper+"..."+(temper+random.nextInt(5))));
+                    adapter.notifyDataSetChanged();
+                    recyclerView.smoothScrollToPosition(Objects.requireNonNull(recyclerView.getAdapter()).getItemCount() - 1);
+                    if(data.size()==7){
+                        btnForRecycler.setImageResource(R.drawable.less);
+                        isAddElement=false;
+                    }
+                }else {
+                    data.remove(data.size()-1);
+                    adapter.notifyDataSetChanged();
+                    recyclerView.smoothScrollToPosition(Objects.requireNonNull(recyclerView.getAdapter()).getItemCount() - 1);
+                    if(data.size()==1){
+                        btnForRecycler.setImageResource(R.drawable.more);
+                        isAddElement=true;
+                    }
+                }
+            }
+        });
     }
 }
